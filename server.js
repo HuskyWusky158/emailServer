@@ -11,8 +11,8 @@ app.get("/", (req, res) => {
 app.post('/emailServer', (req, res) => {
     const emailData = req.body;
 
-    // Send a response back to the client
-    res.send('Email received successfully!', emailData);
+
+    res.json({ message: 'Email received successfully!', emailData });
 })
 
 app.listen(port, () => {
