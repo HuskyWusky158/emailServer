@@ -4,6 +4,10 @@ const port = 3000
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+    res.send("Email server");
+});
+
 app.post('/emailServer', (req, res) => {
     const emailData = req.body;
 
