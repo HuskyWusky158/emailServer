@@ -11,10 +11,12 @@ app.get("/", (req, res) => {
 app.post('/emailServer', (req, res) => {
     const emailData = req.body;
 
+    //Add logic here
 
-    res.json({ message: 'Email received successfully!', emailData });
+
+    res.json({ message: 'Email sent successfully!', emailData });
 })
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
+    console.log(`Server listening on port ${port}`)
 })
