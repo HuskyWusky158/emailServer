@@ -1,7 +1,7 @@
 const nodemailer = require('nodemailer')
 const express = require('express')
 const app = express()
-const port = 3000
+const port = 3005
 
 app.use(express.json());
 
@@ -9,10 +9,10 @@ app.get("/", (req, res) => {
     res.send("Email server");
 });
 
-app.post('/emailServer', (req, res) => {
+app.post('/emailServer', async (req, res) => {
     const emailData = req.body;
 
-    let transporter = nodemailer.createTransport({
+    let transporter = await nodemailer.createTransport({
         service: 'gmail',
         port: 465,
         secure: true, 
@@ -22,7 +22,7 @@ app.post('/emailServer', (req, res) => {
         }
     });
     
-    transporter.sendMail({
+    await transporter.sendMail({
         to: 'easyconversions158@gmail.com',
         subject: 'hello',
         html: '<h1>Hi how are you</h1>'
