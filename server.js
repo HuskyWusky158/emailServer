@@ -1,21 +1,15 @@
 const nodemailer = require('nodemailer')
 const express = require('express')
+const cors = require('cors')
 const app = express()
 const port = 3005
 
 app.use(express.json());
+app.use(cors());
 
 app.get("/", (req, res) => {
     res.send("Email server");
 });
-
-// {
-// 	"websiteOwnerEmail": "bax@email.arizona.edu",
-//     "userEmail": "fakeEmail@email.com",
-//     "feedback": "you are great",
-//     "feedbackRating": 5.0,
-//     "requestResponse": true
-// }
 
 app.post('/emailServer', async (req, res) => {
     const emailData = req.body;
