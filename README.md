@@ -54,5 +54,6 @@ axios.post('http://localhost:3005/emailServer', postData)
         console.error('Error:', error);
     });
 ```
-UML Diagram of API
+### UML Diagram of API
+
 ![UML Diagram](EmailServer.vpd.jpg)
